@@ -1,0 +1,82 @@
+#VRML V2.0 utf8
+#0.7853981633955001 rad=45 grade
+#1.5707963267910001 rad= 90 grade
+#3.1415926535820001 rad= 180 grade
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+			size 0.02 0.8 0.02
+			}
+		}
+	]
+}
+Transform {
+	translation 0.8 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+			size 0.02 0.8 0.02
+			}
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 1.5707963267910001 
+	translation 0.4 0.4 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 0.02 0.82 0.02
+			}
+		}
+	]
+}
+
+Transform {
+	rotation 0 0 1 1.5707963267910001 
+	translation 0.4 -0.4 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+			size 0.02 0.82 0.02
+			}
+		}
+	]
+}
+Transform {
+	translation 0.4 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0 0 1
+					transparency 0.8
+				}
+			}
+			geometry Box {
+				size 0.8 0.8 0.01
+			}
+		}	
+	]
+}

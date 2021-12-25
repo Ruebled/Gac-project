@@ -1,0 +1,66 @@
+#VRML V2.0 utf8
+#0.7853981633955001 rad=45 grade
+#1.5707963267910001 rad= 90 grade
+#3.1415926535820001 rad= 180 grade
+Group {
+	children [
+		Transform {
+	    	rotation 1 0 0 3.1415926535820001
+			children [
+				Shape {
+					appearance Appearance {
+						texture ImageTexture {
+							url ["./wood_texture.jpg"]
+							repeatT FALSE
+						    repeatS TRUE
+						}
+						textureTransform TextureTransform {
+							scale 30 1
+						}
+					}
+					geometry Extrusion {
+						beginCap TRUE
+						endCap TRUE
+						ccw TRUE
+						convex FALSE
+						creaseAngle 0
+						crossSection [-10.3 5.2, -10.3 -5.3, 8.2 -5.3, 9.3 -4.2, 9.3 -0.7, 10.3 -0.7, 10.5 5.3, -10.3 5.4]
+						orientation 0 0 1 0
+						solid FALSE
+						spine[0 0 0, 0 0.9 0.05]
+					} 
+				}
+			]
+		}
+		Transform {
+			rotation 1 0 0 3.1415926535820001
+			translation 0 0.01 0
+			children [
+            	Shape {
+					appearance Appearance {
+						texture ImageTexture {
+							url["./roof_texture.jpg"]
+							repeatS TRUE
+							repeatT TRUE
+						}
+						textureTransform TextureTransform {
+							scale 5 4
+						}
+					}
+					geometry Extrusion {
+						beginCap TRUE
+						endCap TRUE
+						ccw TRUE
+						convex TRUE
+						creaseAngle 0
+						crossSection [-10.7 5, -10.7 -5.7, 8.6 -5.7, 9.7 -4.6, 9.7 -1.2, 10.7 -1.2, 10.7 5.2 -10.7 5]
+						orientation 0 0 1 0
+						solid FALSE
+						spine[0 0 0, 0 0.1 0.0055]
+
+					} 
+				}
+			]
+		}
+	]
+}
