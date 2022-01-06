@@ -17,7 +17,7 @@ Transform {
 	]
 }
 Transform {
-	translation 0.8 0 0
+	translation 0.61 -0.31 0
 	children [
 		Shape {
 			appearance Appearance {
@@ -26,31 +26,15 @@ Transform {
 				}
 			}
 			geometry Box {
-			size 0.02 0.8 0.02
-			}
-		}
-	]
-}
-Transform {
-	rotation 0 0 1 1.5707963267910001 
-	translation 0.4 0.4 0
-	children [
-		Shape {
-			appearance Appearance {
-				material Material {
-					diffuseColor 1 1 1
-				}
-			}
-			geometry Box {
-				size 0.02 0.82 0.02
+			size 0.02 0.2 0.02
 			}
 		}
 	]
 }
 
 Transform {
-	rotation 0 0 1 1.5707963267910001 
-	translation 0.4 -0.4 0
+    rotation 0 0 1 1.5707963267910001
+	translation 0.301 -0.4 0
 	children [
 		Shape {
 			appearance Appearance {
@@ -59,13 +43,30 @@ Transform {
 				}
 			}
 			geometry Box {
-			size 0.02 0.82 0.02
+			size 0.02 0.61 0.02
 			}
 		}
 	]
 }
 Transform {
-	translation 0.4 0 0.01
+	rotation 0 0 1 0.7853981633955001  
+	translation 0.3 0.1 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 0.02 0.9 0.02
+			}
+		}
+	]
+}
+Transform {
+	rotation 1 0 0 -1.5707963267910001
+	translation 0 -0.4 0.011
 	children [
 		Shape {
 			appearance Appearance {
@@ -75,8 +76,16 @@ Transform {
 					shininess 1
 				}
 			}
-			geometry Box {
-				size 0.8 0.8 0.02
+			geometry Extrusion {
+				beginCap TRUE
+				endCap TRUE
+				ccw TRUE
+				convex TRUE
+				creaseAngle 0
+				crossSection[0 0, 0 0.8, 0.6 0.2, 0.6 0, 0 0]
+				orientation 0 0 1 0
+				solid FALSE
+				spine [0 0 0, 0 0.01 0]
 			}
 		}	
 	]

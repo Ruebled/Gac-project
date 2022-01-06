@@ -1,0 +1,185 @@
+#VRML V2.0 utf8
+#0.7853981633955001 rad=45 grade
+#1.5707963267910001 rad= 90 grade
+#3.1415926535820001 rad= 180 grade
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 0.02 1.05 0.02
+			}
+		}
+	]
+}
+Transform {
+	translation 0.15 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+			size 0.02 1.05 0.02
+			}
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 1.5707963267910001 
+	translation 0.075 0.525 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 0.02 0.17 0.02
+			}
+		}
+	]
+}
+
+Transform {
+	rotation 0 0 1 1.5707963267910001 
+	translation 0.075 -0.525 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+			size 0.02 0.17 0.02
+			}
+		}
+	]
+}
+Transform {
+	translation 0.075 0.36 0
+	rotation 0 0 1 1.5707963267910001 
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 0.02 0.17 0.02
+			}
+		}
+	]
+}
+Transform {
+	translation 0.075 0 0.01
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+					shininess 1
+					transparency 0.4
+				}
+			}
+			geometry Box {
+				size 0.15 1.05 0.02
+			}
+		}	
+	]
+}
+# second nested window frame
+Transform {
+	scale 0.8 0.85 1
+	translation 0.017 -0.08 -0.005
+	children [
+		Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor 1 1 1
+						}
+					}
+					geometry Box {
+					size 0.02 1 0.02
+					}
+				}
+			]
+		}
+		Transform {
+			translation 0.15 0 0
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor 1 1 1
+						}
+					}
+					geometry Box {
+					size 0.02 1 0.02
+					}
+				}
+			]
+		}
+		Transform {
+			rotation 0 0 1 1.5707963267910001 
+			translation 0.075 0.5 0
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor 1 1 1
+						}
+					}
+					geometry Box {
+						size 0.02 0.17 0.02
+					}
+				}
+			]
+		}
+		
+		Transform {
+			rotation 0 0 1 1.5707963267910001 
+			translation 0.075 -0.5 0
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor 1 1 1
+						}
+					}
+					geometry Box {
+					size 0.02 0.17 0.02
+					}
+				}
+			]
+		}
+		Transform {
+			translation 0.075 0 0.02
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor 1 1 1
+							shininess 1
+							transparency 1
+						}
+					}
+					geometry Box {
+						size 0.15 1 0.03
+					}
+				}	
+			]
+		}
+	]
+}

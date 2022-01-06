@@ -4,86 +4,1846 @@
 #3.1415926535820001 rad= 180 grade
 Viewpoint { 
 	fieldOfView 0.7853981633955001
-	position 0 0 40
+	position -24 -12 68
 	orientation 0 0 1 0
 	description "the block"
 	jump TRUE
 }
+NavigationInfo{ 
+    avatarSize [0.25, 3.6, 0.75] 
+	headlight TRUE
+    speed 50.0
+    type "WALK"
+	visibilityLimit 0.0
+}  
 Group {
 	children [
+		PointLight {
+			on FALSE
+			intensity 1
+			ambientIntensity 0
+			color 1 1 1
+			location -32 15 71
+			attenuation 1 0 0
+			radius 100
+		}
+		PointLight {
+			on FALSE
+			intensity 1
+			ambientIntensity 0
+			color 1 1 1
+			location -32 15 71
+			attenuation 1 0 0
+			radius 100
+		}
+		PointLight {
+			on FALSE
+			intensity 1
+			ambientIntensity 0
+			color 1 1 1
+			location -32 15 71
+			attenuation 1 0 0
+			radius 100
+		}
+
+
 		Transform {
 		 	#for scalling all the building
-		 	scale 1 1 1
-		 	center 0 0 0
+		 	scale 2.5 2.5 2.5
 		 	children [
-				#bigger components of all
+				#the ground
 				Transform {
-					translation -3 1.3 0
+					translation 0 -7.2 0
 					children [
 						Shape {
 							appearance Appearance {
-								material Material {}
+								texture ImageTexture {
+									url ["asfalt_texture.jpg"]
+									repeatS TRUE
+									repeatT TRUE
+								}
+								textureTransform TextureTransform {
+									scale 1000 1000
+								}
 							}
 							geometry Box {
-								size 31 17 10
+								size 150 0.1 100
 							}
 						}
 					]
 				}
-				#in between block
+				#bigger components of all
 				Transform {
-					rotation 1 0 0 -1.5707963267910001
-					translation 12.5 -7.2023 5
+					translation 13.9 1 0
+					children [
+						Shape {
+							appearance DEF yellow_texture Appearance {
+								texture ImageTexture {
+									url ["./wall_yellow.png"]
+								}
+								textureTransform TextureTransform {
+									scale 1600 1300
+								}
+							}
+							geometry Box {
+								size 60.6 16.5 10
+							}
+						}
+					]
+				}
+				#roof start
+
+				#top near part
+				Transform {
+					rotation 1 0 0 0.149066
+					translation 13.93 9.60 2.67
 					children [
 						Shape {
 							appearance Appearance {
-								material Material {}
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 60 10
+								}
+							}
+							geometry Box {
+								size 61.25 0.01 5.4
+							}
+						}
+					]
+				}
+				#top further part
+				Transform {
+					rotation 1 0 0 -0.149066
+					translation 13.93 9.60 -2.67
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 60 10
+								}
+							}
+							geometry Box {
+								size 61.25 0.01 5.4
+							}
+						}
+					]
+				}
+
+
+				#right part
+				Transform {
+					rotation 0 0 1 -1.43170038531
+					translation 45.15 4.18 0
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 5 9
+								}
 							}
 							geometry Extrusion {
 								beginCap TRUE
 								endCap TRUE
 								ccw TRUE
 								convex TRUE
-								creaseAngle 0
-								crossSection [ 0 0, 0 17, 3 10, 3 0, 0 0]
-								orientation 0 0 1 0
 								solid FALSE
-								spine [0 0 0, 0 10 0]
+								creaseAngle 0
+								crossSection[5.6 0, -5.6 0, -5.3 5.1, 0 5.86, 5.3 5.1, 5.2 0]
+								spine[0 0 0, 0 0.1 0]
+								orientation 0 1 0 -1.5707963267910001
 							}
+						}
+					]
+				}
+				#left part
+				Transform {
+					rotation 0 0 1 1.43170038531
+					translation -17.42 4.18 0
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 5 9
+								}
+							}
+							geometry Extrusion {
+								beginCap TRUE
+								endCap TRUE
+								ccw TRUE
+								convex TRUE
+								solid FALSE
+								creaseAngle 0
+								crossSection[5.6 0, -5.6 0, -5.3 5.1, 0 5.86, 5.3 5.1, 5.2 0]
+								spine[0 0 0, 0 0.1 0]
+								orientation 0 1 0 1.5707963267910001
+							}
+						}
+					]
+				}
+
+				#front really part
+				Transform {
+					translation 13.8 8.55 5
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 2 100
+									rotation 1.5707963267910001
+								}
+
+							}
+							geometry Box{
+								size 61.25 1.3 0.5
+							}
+						}
+					]
+				}
+				Transform {
+					translation 13.88 4.84 5
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./wall_yellow.png"]
+								}
+								textureTransform TextureTransform {
+									scale 2 100
+								}
+							}
+							geometry Box{
+								size 62.36 1.3 0.8
+							}
+						}
+					]
+				}
+				Transform {
+					translation 13.88 4.84 5.5
+					rotation 1 0 0 -0.1
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 2 100
+									rotation 1.5707963267910001
+								}
+							}
+							geometry Box{
+								size 62.36 1.3 0.02
+							}
+						}
+					]
+				}
+
+
+
+
+				#roof end
+
+
+				Transform {
+					children [
+						#windows
+						#1 section
+						#1.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#2 section
+						#1.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#3 section 
+						#1.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#4 section
+						#1.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#5 section
+						#1.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#6 section
+						#1.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#7 section
+						#1.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#8 section
+						#1.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#9 section
+						#1.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#10 section
+						#1.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#11 section
+						#1.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#12 section
+						#1.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#13 section
+						#1.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#14 section
+						#1.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#15 section
+						#1.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#16 section
+						#1.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#17 section
+						#1.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#18 section
+						#1.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#2.19
+						Transform {
+							scale 4 4 1
+							translation 44.07 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.19
+						Transform {
+							scale 4 4 1
+							translation 44.07 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/triangle_comb.wrl"]
+								}
+							]
+						}
+						#2.20
+						Transform {
+							scale 4 4 1
+							translation 47.41 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/triangle_comb.wrl"]
+								}
+							]
+						}
+
+
+
+					]
+				}
+				Transform {
+					translation 0 0 -10.03
+					children [
+						#windows
+						#1 section
+						#1.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.1
+						Transform {
+							scale 4 4 1
+							translation -16.07 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#2 section
+						#1.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.2
+						Transform {
+							scale 4 4 1
+							translation -12.73 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#3 section 
+						#1.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.3
+						Transform {
+							scale 4 4 1
+							translation -9.37 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#4 section
+						#1.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.4
+						Transform {
+							scale 4 4 1
+							translation -6.03 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#5 section
+						#1.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.5
+						Transform {
+							scale 4 4 1
+							translation -2.69 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#6 section
+						#1.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.6
+						Transform {
+							scale 4 4 1
+							translation 0.65 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#7 section
+						#1.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.7
+						Transform {
+							scale 4 4 1
+							translation 3.99 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#8 section
+						#1.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.8
+						Transform {
+							scale 4 4 1
+							translation 7.33 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#9 section
+						#1.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.9
+						Transform {
+							scale 4 4 1
+							translation 10.67 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#10 section
+						#1.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.10
+						Transform {
+							scale 4 4 1
+							translation 14.01 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#11 section
+						#1.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.11
+						Transform {
+							scale 4 4 1
+							translation 17.35 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#12 section
+						#1.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.12
+						Transform {
+							scale 4 4 1
+							translation 20.69 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#13 section
+						#1.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.13
+						Transform {
+							scale 4 4 1
+							translation 24.03 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#14 section
+						#1.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.14
+						Transform {
+							scale 4 4 1
+							translation 27.37 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#15 section
+						#1.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.15
+						Transform {
+							scale 4 4 1
+							translation 30.71 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#16 section
+						#1.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.16
+						Transform {
+							scale 4 4 1
+							translation 34.05 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#17 section
+						#1.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.17
+						Transform {
+							scale 4 4 1
+							translation 37.39 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#18 section
+						#1.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 -4.25 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#2.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#4.18
+						Transform {
+							scale 4 4 1
+							translation 40.73 6.673 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/another_comb.wrl"]
+								}
+							]
+						}
+						#2.19
+						Transform {
+							scale 4 4 1
+							translation 44.07 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/combination.wrl"]
+								}
+							]
+						}
+						#3.19
+						Transform {
+							scale 4 4 1
+							translation 44.07 3.032 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/triangle_comb.wrl"]
+								}
+							]
+						}
+						#2.20
+						Transform {
+							scale 4 4 1
+							translation 47.41 -0.609 5
+							children [
+								Inline {
+									url ["bloc_mare/ferestre/triangle_comb.wrl"]
+								}
+							]
+						}
+
+					]
+				}
+
+				#entrance
+				Transform {
+					translation -7.5 -7.12 7.5
+					children [
+						Inline {
+							url []
 						}
 					]
 				}
 				# right mini building
             	Transform {
-					translation 17.5 -5.2111 0
+					translation 47.7 -5.2111 0
 					rotation 0 1 0 1.5707963267910001
 					children [
 						Shape {
-							appearance Appearance {
-								material Material {}
-							}
+							appearance USE yellow_texture
 							geometry Box {
-								size 10 4 4
+								size 10 4.4 7
 							}
 						}
 					]
 				} 
-				#The roof obove the right mini buiding
+				#The triangle obove the right mini buiding
 				Transform {
 					rotation 1 0 0 -1.5707963267910001
-					translation 15.5 -3.25 5
+					translation 44.2 -3.01 5
 					children [
 							Shape {
-								appearance Appearance {
-									material Material {}
-								}
+								appearance USE yellow_texture
 								geometry Extrusion {
 									beginCap TRUE
 									endCap TRUE
 									ccw TRUE
-									convex TRUE
-									creaseAngle 0
-									crossSection [ 0 0, 6. 0, 0 6.5, 0 0]
+									crossSection [ 0 0, 0 8.2, 8.2 0, 0 0]
 									orientation 0 0 1 0
 									solid FALSE
 									spine [0 0 0, 0 10 0]
@@ -91,10 +1851,10 @@ Group {
 							}	
 					]
 				}
-				#the real roof
+				#roof above triangle, mini right building
 				Transform {
-					rotation 0 0 1 -0.87053981633955001
-					translation 18 0 0
+					rotation 0 0 1 -0.7853981633955001
+					translation 49 0.44 0
 					children [
 						Shape {
 							appearance Appearance {
@@ -107,67 +1867,60 @@ Group {
 								}
 							}
 							geometry Box {
-								size 8.5 0.2 10.5
+								size 11 0.25 11.2
 							}
 						}
+					] 
+				}
+
+				#The mini-trapez above the right mini buiding
+				Transform {
+					rotation 1 0 0 -1.5707963267910001
+					translation 44.2 4.25 5
+					children [
+							Shape {
+								appearance USE yellow_texture
+								geometry Extrusion {
+									beginCap TRUE
+									endCap TRUE
+									ccw TRUE
+									convex TRUE
+									creaseAngle 0
+									crossSection [0 0, 0 5, 0.3 5, 1 0, 0 0]
+									orientation 0 0 1 0
+									solid FALSE
+									spine [0 0 0, 0 10 0]
+								}
+							}	
 					]
 				}
-				#another real roof
+				#The mini-trapez on the left
 				Transform {
-					rotation 0 0 1 -1.1797963267910001
-					translation 14.5 5.4 0
+					rotation 1 0 0 -1.5707963267910001
+					translation -16.4 4.25 5
 					children [
-						Shape {
-							appearance Appearance {
-								texture ImageTexture {
-									url ["./mini_roof.png"]
+							Shape {
+								appearance USE yellow_texture
+								geometry Extrusion {
+									beginCap TRUE
+									endCap TRUE
+									ccw TRUE
+									convex TRUE
+									creaseAngle 0
+									crossSection [0 0,-1 0, -0.3 5, 0 5,0 0]
+									spine [0 0 0, 0 10 0]
 								}
-								textureTransform TextureTransform {
-									scale 5 9
-									rotation 1.5707963267910001
-								}
-							}
-							geometry Box {
-								size 8.5 0.2 10.5
-							}
-						}
+							}	
 					]
 				}
 
 				#amphitheatre
 				Transform {
-					translation 6 -3.6 10
-					rotation 1 0 0 3.1415926535820001 
-					scale 1 1 1
+					rotation 0 0 1 0
+					translation 0 0 0
 					children [
-						Shape {
-							appearance Appearance {
-								material Material {
-									diffuseColor 1 1 1
-								}
-							}
-							geometry Extrusion {
-								beginCap TRUE
-								endCap TRUE
-								ccw TRUE
-								convex TRUE
-								creaseAngle 0
-								crossSection [-10 5, -10 -5, 7.9 -5, 9.0 -3.9, 9.0 -1.4, 8.0 -1.4, 8.0 -0.4, 10 -0.4, 10 5, -10 5]
-								orientation 0 0 1 0
-								solid FALSE
-								spine [0 0 0, 0 3.6 0]
-							}									
-						}
-					]
-				}
-				#amphitheatre roof
-				Transform {
-					translation 6 -3 10
-					scale 1 1 1
-					children [
-				    	Inline {
-							url ["./bloc_mic/acoperis.wrl"]
-							
+						Inline {
+							url []
 						}
 					]
 				}

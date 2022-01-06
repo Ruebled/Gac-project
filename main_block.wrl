@@ -1,0 +1,67 @@
+#amphitheatre
+				Transform {
+					translation 6 -3.75 10
+					rotation 1 0 0 3.1415926535820001 
+					scale 1 1 1
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./wall_yellow.png"]
+								}
+								textureTransform TextureTransform {
+									scale 5000 100 
+								}
+							}
+							geometry Extrusion {
+								beginCap TRUE
+								endCap TRUE
+								ccw TRUE
+								convex TRUE
+								creaseAngle 0
+								crossSection [-10 5, -10 -5, 7.9 -5, 9.0 -3.9, 9.0 -1.4, 8.0 -1.4, 8.0 -0.4, 10 -0.4, 10 5, -10 5]
+								orientation 0 0 1 0
+								solid FALSE
+								spine [0 0 0, 0 3.45 0]
+							}									
+						}
+					]
+				}	
+				# plus to the amphitheatre
+				Transform {
+					translation 6 -2.95 10
+					rotation 1 0 0 3.1415926535820001 
+					scale 1 1 1
+					children [
+						Shape {
+							appearance Appearance {
+								material Material {
+									diffuseColor 1 1 1
+								}
+							}
+							geometry Extrusion {
+								beginCap TRUE
+								endCap TRUE
+								ccw TRUE
+								convex TRUE
+								creaseAngle 0
+								crossSection [-10 5, -10 -5, 7.9 -5, 9.0 -3.9, 9.0 -1.4, 8.0 -1.4, 8.0 -0.4, 10 -0.4, 10 5, -10 5]
+								orientation 0 0 1 0
+								solid FALSE
+								spine [0 0 0, 0 0.8 0]
+							}									
+						}
+					]
+				}	
+				#amphitheatre roof
+				Transform {
+					rotation 1 0 0 0.009
+					translation 6 -2.4 10
+					scale 1 1 1
+					children [
+				    	Inline {
+							url ["./bloc_mic/acoperis.wrl"]
+						}
+					]
+				}
+

@@ -1,0 +1,334 @@
+#VRML V2.0 utf8
+#0.7853981633955001 rad=45 grade
+#1.5707963267910001 rad= 90 grade
+#3.1415926535820001 rad= 180 grade
+
+#the stairs
+Transform {
+	children [
+		Shape {
+			appearance DEF ceramic_texture Appearance {
+				texture ImageTexture {
+					url ["pillars_texture.jpg"]
+					repeatS TRUE
+					repeatT TRUE
+				}
+				textureTransform TextureTransform {
+					scale 5 5
+				}
+			}
+			geometry Box {
+				size 7 0.2 5
+			}
+		}
+	]
+}
+Transform {
+	translation 0 0.2 -0.2
+	children [
+		Shape {
+			appearance USE ceramic_texture
+			geometry Box {
+				size 7 0.2 4.6
+			}
+		}
+	]
+}
+Transform {
+	translation 0 0.4 -0.4
+	children [
+		Shape {
+			appearance USE ceramic_texture
+			geometry Box {
+				size 7 0.2 4.2
+			}
+		}
+	]
+}
+Transform {
+	translation 0 0.6 -0.6
+	children [
+		Shape {
+			appearance USE ceramic_texture
+			geometry Box {
+				size 7 0.2 3.8
+			}
+		}
+	]
+}
+#end of stairs
+
+#pilars
+#pillar right
+Transform {
+	translation 2.6 2.5 0.78
+	children [
+		Shape {
+			appearance DEF pillar_texture Appearance {
+				texture ImageTexture {
+					url ["pillars_texture.png"]
+					repeatS TRUE
+					repeatT TRUE
+				}
+				textureTransform TextureTransform {
+					scale 1 4
+				}
+			}
+			geometry Box {
+				size 1 5 1
+			}
+		}
+	]
+}
+#in front of pilar block
+Transform {
+	translation 2.745 0.249 2.12
+	children [
+		Shape {
+			appearance DEF bellow_texture Appearance {
+				texture ImageTexture {
+					url ["bellow_texture.jpg"]
+					repeatS TRUE
+					repeatT TRUE
+				}
+			}
+			geometry Box {
+				size 1.5 0.7 1.7
+			}
+		}
+	]
+}
+#the tile above the brown box from the from of the pillar
+Transform {
+	translation 2.7 0.6 2.15
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 1.6 0.05 1.8
+			}
+		}
+	]
+}
+#end of pilar n1
+
+#left front pillar
+Transform {
+	translation -2.99 2.5 0.78
+	children [
+		Shape {
+			appearance USE pillar_texture
+			geometry Box {
+				size 1 5 1
+			}
+		}
+	]
+}
+# the brown block under left front pillar
+Transform {
+	translation -3.01 0.249 1.25
+	children [
+		Shape {
+			appearance USE bellow_texture
+			geometry Box {
+				size 1 0.7 3.5
+			}
+		}
+	]
+}
+# the tile above block brown block left
+Transform {
+	translation -3.0 0.6 2.15
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 1.1 0.05 1.8
+			}
+		}
+	]
+}
+#end left front pillar
+
+#back left pillar
+Transform {
+	translation -3.24 2.5 -2.15
+	children [
+		Shape {
+			appearance USE pillar_texture
+			geometry Box {
+				size 0.5 5 0.5
+			}
+		}
+	]
+}
+#back middle pillar
+Transform {
+	translation 0 2.5 -2.15
+	children [
+		Shape {
+			appearance USE pillar_texture
+			geometry Box {
+				size 0.5 5 0.5
+			}
+		}
+	]
+}
+
+#back right pillar
+Transform {
+	translation 3.24 2.5 -2.15
+	children [
+		Shape {
+			appearance USE pillar_texture
+			geometry Box {
+				size 0.5 5 0.5
+			}
+		}
+	]
+}
+#the roof in front of the entrance
+Transform {
+	translation -0.47 5 -0.5
+	children [
+		Shape {
+			appearance Appearance {
+				texture ImageTexture {
+					url ["pillars_texture.png"]
+					repeatS TRUE
+					repeatT TRUE
+				}
+				textureTransform TextureTransform {
+					scale 10 2
+				}
+			}
+			geometry Box {
+				size 8 1.2 4
+			}
+		}
+	]
+}
+#the roof above the roof
+Transform {
+	translation -0.47 5.602 -0.5
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Box {
+				size 8.04 0.05 4.04
+			}
+		}
+	]
+}
+
+
+
+
+#the triangle pant.. for whellchair
+#transform for moving the whellchair path
+Transform {
+	translation 0 0 0.25
+	children [
+		Transform {
+			rotation 1 0 0 -1.5707963267910001
+			translation -3.5 -0.1 -0.5 
+			children [
+				Shape {
+					appearance USE bellow_texture
+					geometry Extrusion {
+						beginCap TRUE
+						endCap TRUE
+						ccw TRUE
+						convex TRUE
+						creaseAngle 0
+						scale 1 1 
+						orientation 0 0 1 0
+						solid TRUE
+						crossSection [ 0 0, -5 0, -5 0.195, 0 0.75, 0 0]
+						spine [ 0 0 0, 0 2 0 ]
+					}
+				}
+			]
+		}
+		Transform {
+			rotation 1 0 0 -1.5707963267910001
+			#rotation 0 0 0 1.5707963267910001 
+			translation -5.48 -0.1 1.5
+			children [
+				Shape {
+					appearance USE bellow_texture
+					geometry Extrusion {
+						beginCap TRUE
+						endCap TRUE
+						ccw TRUE
+						convex TRUE
+						creaseAngle 0
+						scale 1 1 
+						orientation 0 0 1 0
+						solid TRUE
+						crossSection [ 0 0, -3 0, -3 0.2, 0 0]
+						spine [ 0 0 0, 0 2 0 ]
+					}
+				}
+			]
+		}
+		Transform {
+			translation -9.73 0.01 -0.5
+			children [
+				Shape {
+					appearance USE bellow_texture
+					geometry Box {
+						size 2.5 0.2 4 
+					}
+				}
+			]
+		}
+		Transform {
+			translation -9.735 0.14 -0.475
+			children [
+				Shape {
+					appearance USE ceramic_texture
+					geometry Box {
+						size 2.55 0.05 4.05
+					}
+				}
+			]
+		}
+		Transform {
+			rotation 0 0 1 0.10876560799
+			translation -5.985 0.4 -1.48
+			children [
+				Shape {
+					appearance USE ceramic_texture
+					geometry Box {
+						size 5 0.05 2.05
+					}
+				}
+			]
+		}
+		Transform {
+			rotation 0 0 1 -0.068657933721
+			translation -6.9805 0.038 0.525
+			children [
+				Shape {
+					appearance USE ceramic_texture
+					geometry Box {
+						size 3 0.05 2.05
+					}
+				}
+			]
+		}
+	]
+}
