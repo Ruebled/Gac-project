@@ -231,7 +231,7 @@ Group {
 						}
 					}
 					geometry Box {
-						size 0.36 0.36 0.01
+						size 0.4 0.36 0.01
 					}
 				}
 			]

@@ -75,7 +75,7 @@ Transform {
 				}
 			}
 			geometry Box {
-				size 1 5 1
+				size 1 4 1
 			}
 		}
 	]
@@ -123,7 +123,7 @@ Transform {
 		Shape {
 			appearance USE pillar_texture
 			geometry Box {
-				size 1 5 1
+				size 1 4 1
 			}
 		}
 	]
@@ -165,7 +165,7 @@ Transform {
 		Shape {
 			appearance USE pillar_texture
 			geometry Box {
-				size 0.5 5 0.5
+				size 0.5 4 0.5
 			}
 		}
 	]
@@ -177,7 +177,7 @@ Transform {
 		Shape {
 			appearance USE pillar_texture
 			geometry Box {
-				size 0.5 5 0.5
+				size 0.5 4 0.5
 			}
 		}
 	]
@@ -190,14 +190,15 @@ Transform {
 		Shape {
 			appearance USE pillar_texture
 			geometry Box {
-				size 0.5 5 0.5
+				size 0.5 4 0.5
 			}
 		}
 	]
 }
 #the roof in front of the entrance
 Transform {
-	translation -0.47 5 -0.5
+	rotation 1 0 0 0.056
+	translation -0.47 4.26 -0.5
 	children [
 		Shape {
 			appearance Appearance {
@@ -218,7 +219,8 @@ Transform {
 }
 #the roof above the roof
 Transform {
-	translation -0.47 5.602 -0.5
+	rotation 1 0 0 0.063
+	translation -0.47 4.89 -0.5
 	children [
 		Shape {
 			appearance Appearance {
@@ -239,7 +241,7 @@ Transform {
 #the triangle pant.. for whellchair
 #transform for moving the whellchair path
 Transform {
-	translation 0 0 0.25
+	translation 0 0 0.67
 	children [
 		Transform {
 			rotation 1 0 0 -1.5707963267910001
@@ -296,6 +298,32 @@ Transform {
 			]
 		}
 		Transform {
+			translation -12.75 0 0
+			rotation 0 1 0 0.9653981633955001 
+			children [
+				Shape {
+					appearance USE bellow_texture
+					geometry Box {
+						size 0.2 0.2 5
+					}
+				}
+			]
+		}
+		Transform {
+			translation -12.75 0.1 0
+			rotation 0 1 0 0.9653981633955001 
+			children [
+				Shape {
+					appearance USE ceramic_texture
+					geometry Box {
+						size 0.2 0.01 5
+					}
+				}
+			]
+		}
+
+
+		Transform {
 			translation -9.735 0.14 -0.475
 			children [
 				Shape {
@@ -332,3 +360,633 @@ Transform {
 		}
 	]
 }
+#first
+Transform {
+	translation -3.3 1.1 -1.7
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -3.3 1.1 0.1
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+#second
+Transform {
+	translation -5.3 0.9 -1.7
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -5.3 0.9 0.1
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+#third
+Transform {
+	translation -7.3 0.7 -1.7
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -7.3 0.7 0.1
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+#fourth
+Transform {
+	translation -8.6 0.55 -1.7
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -8.6 0.55 0.1
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+#near that
+Transform {
+	translation -8.6 0.55 0.3
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -8.6 0.55 2.05
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+
+#fifth
+Transform {
+	translation -9.8 0.55 -1.7
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+#sixth
+Transform {
+	translation -10.9 0.55 -1.7
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -10.9 0.55 -0.85
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -10.9 0.55 0.2
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -10.9 0.55 1.15
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -10.9 0.55 2.05
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -7.6 0.51 0.3
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -7.6 0.51 2.05
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -6.6 0.43 0.3
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -6.6 0.43 2.05
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -5.6 0.35 0.3
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+Transform {
+	translation -5.6 0.35 2.05
+	children [
+		Shape {
+			appearance DEF silver Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+			}
+			geometry Cylinder {
+				side TRUE
+				bottom TRUE 
+				top TRUE
+				height 0.8
+				radius 0.025
+			}
+		}
+	]
+}
+#orizontale
+Transform {
+	rotation 0 0 1 0.11
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -5.77 1.88 -1.7
+			children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 5.4
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 0.11
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -5.77 1.5 -1.7
+			children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 5.4
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 0.11
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -5.77 1.88 0.1
+			children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 5.4
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 0.11
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -5.77 1.5 0.1
+			children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 5.4
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+#double
+#orizontale
+Transform {
+	rotation 0 0 1 -0.072
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -7.14 0.35 0.3
+			children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 3.07
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 -0.072
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -7.12 -0.03 0.3
+				children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 3.05
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 -0.072
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -7.14 0.35 2.05
+			children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 3.07
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+Transform {
+	rotation 0 0 1 -0.072
+	children [
+		Transform {
+			rotation 0 0 1 1.5708
+			translation -7.12 -0.03 2.05
+				children [
+				Shape {
+					appearance DEF silver Appearance {
+						texture ImageTexture {
+							url ["silver_texture.jpg"]
+						}
+					}
+					geometry Cylinder {
+						side TRUE
+						bottom TRUE 
+						top TRUE
+						height 3.05
+						radius 0.025
+					}
+				}
+			]
+		}
+	]
+}
+

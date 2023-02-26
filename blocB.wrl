@@ -10,9 +10,9 @@ Viewpoint {
 	jump TRUE
 }
 NavigationInfo{ 
-    avatarSize [0.25, 3.6, 0.75] 
+    avatarSize [0.25, 2.0, 0.75] 
 	headlight TRUE
-    speed 50.0
+    speed 10.0
     type "WALK"
 	visibilityLimit 0.0
 }  
@@ -53,7 +53,7 @@ Group {
 		 	children [
 				#the ground
 				Transform {
-					translation 0 -7.2 0
+					translation 0 -7.249 0
 					children [
 						Shape {
 							appearance Appearance {
@@ -92,11 +92,37 @@ Group {
 					]
 				}
 				#roof start
+				#just the door near arch
+				Transform {
+						scale 5.7 4.48 1
+						rotation 0 1 0 -1.5707963267910001
+						translation 0.4 -4.05 4.2
+						children [
+								Transform {
+									scale 0.236 0.26 0.2
+						 		   	translation 0.263 -0.3 0
+						 		   	children [
+						 		   		Inline {
+						 		   			url ["bloc_mare/usi/afer_mini.wrl"]
+						 		   		}
+						 		   	]
+								}
+								Transform {
+									scale 0.236 0.26 0.2
+						 		   	translation 0.454 -0.3 0
+						 		   	children [
+						 		   		Inline {
+						 		   			url ["bloc_mare/usi/afer_mini.wrl"]
+						 		   		}
+						 		   	]
+								}
+						]
+				}
 
 				#top near part
 				Transform {
 					rotation 1 0 0 0.149066
-					translation 13.93 9.60 2.67
+					translation 13.93 9.58 2.75
 					children [
 						Shape {
 							appearance Appearance {
@@ -108,7 +134,7 @@ Group {
 								}
 							}
 							geometry Box {
-								size 61.25 0.01 5.4
+								size 61.25 0.08 5.7
 							}
 						}
 					]
@@ -116,7 +142,7 @@ Group {
 				#top further part
 				Transform {
 					rotation 1 0 0 -0.149066
-					translation 13.93 9.60 -2.67
+					translation 13.93 9.60 -2.77
 					children [
 						Shape {
 							appearance Appearance {
@@ -128,7 +154,7 @@ Group {
 								}
 							}
 							geometry Box {
-								size 61.25 0.01 5.4
+								size 61.35 0.08 5.5
 							}
 						}
 					]
@@ -156,7 +182,7 @@ Group {
 								convex TRUE
 								solid FALSE
 								creaseAngle 0
-								crossSection[5.6 0, -5.6 0, -5.3 5.1, 0 5.86, 5.3 5.1, 5.2 0]
+								crossSection[5.6 0, -5.6 0, -5.254 5.055, 0 5.86, 5.254 5.055, 5.2 0]
 								spine[0 0 0, 0 0.1 0]
 								orientation 0 1 0 -1.5707963267910001
 							}
@@ -184,7 +210,7 @@ Group {
 								convex TRUE
 								solid FALSE
 								creaseAngle 0
-								crossSection[5.6 0, -5.6 0, -5.3 5.1, 0 5.86, 5.3 5.1, 5.2 0]
+								crossSection[5.6 0, -5.6 0, -5.254 5.055, 0 5.86, 5.254 5.055, 5.2 0]
 								spine[0 0 0, 0 0.1 0]
 								orientation 0 1 0 1.5707963267910001
 							}
@@ -194,7 +220,8 @@ Group {
 
 				#front really part
 				Transform {
-					translation 13.8 8.55 5
+					translation 13.8 8.5 5
+					rotation 1 0 0 -0.04
 					children [
 						Shape {
 							appearance Appearance {
@@ -208,7 +235,7 @@ Group {
 
 							}
 							geometry Box{
-								size 61.25 1.3 0.5
+								size 61.25 1.3 0.55
 							}
 						}
 					]
@@ -226,14 +253,14 @@ Group {
 								}
 							}
 							geometry Box{
-								size 62.36 1.3 0.8
+								size 62.36 1.3 0.75
 							}
 						}
 					]
 				}
 				Transform {
-					translation 13.88 4.84 5.5
-					rotation 1 0 0 -0.1
+				    translation 13.88 4.84 5.32
+					rotation 1 0 0 -0.04
 					children [
 						Shape {
 							appearance Appearance {
@@ -246,17 +273,334 @@ Group {
 								}
 							}
 							geometry Box{
-								size 62.36 1.3 0.02
+								size 62.36 1.3 0.2
 							}
 						}
 					]
 				}
+				#back really part
+				Transform { 
+					translation 13.8 8.5 -5
+					rotation 1 0 0 0.06
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 2 100
+									rotation 1.5707963267910001
+								}
 
-
-
-
+							}
+							geometry Box{
+								size 61.25 1.3 0.55
+							}
+						}
+					]
+				}
+				Transform {
+					translation 13.88 4.84 -5
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./wall_yellow.png"]
+								}
+								textureTransform TextureTransform {
+									scale 2 100
+								}
+							}
+							geometry Box{
+								size 62.36 1.3 0.75
+							}
+						}
+					]
+				}
+				Transform {
+					translation 13.88 4.84 -5.35
+					rotation 1 0 0 0.04
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 2 100
+									rotation 1.5707963267910001
+								}
+							}
+							geometry Box{
+								size 62.36 1.3 0.2
+							}
+						}
+					]
+				}
+				# the right near triangle
+				Transform {
+					translation 45.14 4.21 5.35
+					rotation 1 0 0 1.5707963267910001
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 8 5
+									rotation 1.5707963267910001
+								}
+							}
+							geometry Extrusion{
+								beginCap TRUE
+								endCap TRUE
+								ccw TRUE
+								solid FALSE
+								convex TRUE
+								creaseAngle 0
+								crossSection [0.06 0, -1 0, -1 -4.95, -0.58 -4.95, 0.063 0]
+								spine[0 0 0, 0 0.1 0]
+								orientation 1 0 0 -0.04
+							}
+						}
+					]
+				}
+				# the left near triangle
+				Transform {
+					rotation 0 1 0 -3.1415926535820001 
+					children [
+						Transform {
+							translation 17.3 4.21 -5.45
+							rotation 1 0 0 1.5707963267910001
+							children [
+								Shape {
+									appearance Appearance {
+										texture ImageTexture {
+											url ["./mini_roof.png"]
+										}
+										textureTransform TextureTransform {
+											scale 8 5
+											rotation 1.5707963267910001
+										}
+									}
+									geometry Extrusion{
+										beginCap TRUE
+										endCap TRUE
+										ccw TRUE
+										solid FALSE
+										convex TRUE
+										creaseAngle 0
+										crossSection [0.14 0, -1 0, -1 -4.95, -0.58 -4.95, 0.14 0]
+										spine[0 0 0, 0 0.1 0]
+										orientation 1 0 0 0.04
+									}
+								}
+							]
+						}
+					]
+				}
+				#triangles from the back
+				# the right near triangle
+				Transform {
+					translation 45.14 4.24 -5.52
+					rotation 1 0 0 1.5707963267910001
+					children [
+						Shape {
+							appearance Appearance {
+								texture ImageTexture {
+									url ["./mini_roof.png"]
+								}
+								textureTransform TextureTransform {
+									scale 8 5
+									rotation 1.5707963267910001
+								}
+							}
+							geometry Extrusion{
+								beginCap TRUE
+								endCap TRUE
+								ccw TRUE
+								solid FALSE
+								convex TRUE
+								creaseAngle 0
+								crossSection [0.06 0, -1 0, -1 -4.95, -0.58 -4.95, 0.063 0]
+								spine[0 0 0, 0 0.1 0]
+								orientation 1 0 0 0.054
+							}
+						}
+					]
+				}
+				# the left near triangle
+				Transform {
+					rotation 0 1 0 -3.1415926535820001 
+					children [
+						Transform {
+							translation 17.3 4.24 5.41
+							rotation 1 0 0 1.5707963267910001
+							children [
+								Shape {
+									appearance Appearance {
+										texture ImageTexture {
+											url ["./mini_roof.png"]
+										}
+										textureTransform TextureTransform {
+											scale 8 5
+											rotation 1.5707963267910001
+										}
+									}
+									geometry Extrusion{
+										beginCap TRUE
+										endCap TRUE
+										ccw TRUE
+										solid FALSE
+										convex TRUE
+										creaseAngle 0
+										crossSection [0.14 0, -1 0, -1 -4.95, -0.58 -4.95, 0.14 0]
+										spine[0 0 0, 0 0.1 0]
+										orientation 1 0 0 -0.054
+									}
+								}
+							]
+						}
+					] 
+				}
 				#roof end
-
+				Transform {
+					translation 0 0 -0.7
+					children[
+						#the block in front
+						Transform {
+							translation -7.9 1.73 5.75
+							children [
+								Shape {
+									appearance USE yellow_texture
+									geometry Box{
+										size 3.34 14.5 1.5
+									}
+								}
+							]
+						}
+						#the triangle above it
+						Transform {
+							rotation 0 0 1  -1.5707963267910001
+							translation -9.57 8.98 5
+							children [
+								Shape {
+									appearance USE yellow_texture
+									geometry Extrusion{
+										beginCap TRUE
+										endCap TRUE
+										ccw TRUE
+										convex TRUE
+										creaseAngle 0
+										crossSection[0 0, -0.2 0, 0 1.5, 0 0]
+										spine[0 0 0, 0 3.34 0]
+									}
+								}
+							]
+						}
+						#the roof above
+						Transform {
+							rotation 1 0 0 0.134
+							translation -7.9 9.025 6.5
+							children [
+								Shape {
+									appearance Appearance {
+												texture ImageTexture {
+													url ["./mini_roof.png"]
+												}
+												textureTransform TextureTransform {
+													scale 4.9 5
+													translation -1.7 0
+												}
+											}
+									geometry Box{
+										size 5 0.08 2	
+									}
+								}
+							]
+						}
+						#the brick layer
+						Transform {
+							translation -7.9 1.73 5.8
+							children [
+								Shape {
+									appearance DEF brick_texture Appearance {
+												texture ImageTexture {
+													url ["./brick_texture.png"]
+												}
+												textureTransform TextureTransform {
+													scale 10 30
+													translation -1.7 0
+												}
+											}
+									geometry Box{
+										size 3.5 11.5 1.6
+									}
+								}
+							]
+						}
+					]
+				}
+				Transform {
+					translation 24.25 -0.5 0.07
+					rotation 0 1 0 3.1415926535820001 
+					children [
+					#the block in front
+						Transform {
+							translation -7.9 1.35 5.75
+							children [
+								Shape {
+									appearance USE brick_texture
+									geometry Box{
+										size 3.34 16.3 1.5
+									}
+								}
+							]
+						}
+						#the triangle above it
+						Transform {
+							rotation 0 0 1  -1.5707963267910001
+							translation -9.57 9.5 5
+							children [
+								Shape {
+									appearance USE brick_texture
+									geometry Extrusion{
+										beginCap TRUE
+										endCap TRUE
+										ccw TRUE
+										convex TRUE
+										creaseAngle 0
+										crossSection[0 0, -0.2 0, 0 1.5, 0 0]
+										spine[0 0 0, 0 3.34 0]
+									}
+								}
+							]
+						}
+						#the roof above
+						Transform {
+							rotation 1 0 0 0.134
+							translation -7.9 9.562 6.5
+							children [
+								Shape {
+									appearance Appearance {
+												texture ImageTexture {
+													url ["./mini_roof.png"]
+												}
+												textureTransform TextureTransform {
+													scale 4.9 5
+													translation -1.7 0
+												}
+											}
+									geometry Box{
+										size 5 0.08 2	
+									}
+								}
+							]
+						}
+					]
+				}
 
 				Transform {
 					children [
@@ -343,47 +687,6 @@ Group {
 								}
 							]
 						}
-						#3 section 
-						#1.3
-						Transform {
-							scale 4 4 1
-							translation -9.37 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
-						#2.3
-						Transform {
-							scale 4 4 1
-							translation -9.37 -0.609 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
-						#3.3
-						Transform {
-							scale 4 4 1
-							translation -9.37 3.032 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
-						#4.3
-						Transform {
-							scale 4 4 1
-							translation -9.37 6.673 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/another_comb.wrl"]
-								}
-							]
-						}
 						#4 section
 						#1.4
 						Transform {
@@ -391,7 +694,7 @@ Group {
 							translation -6.03 -4.25 5
 							children [
 								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
+									url ["bloc_mare/usi/afer_door.wrl"]
 								}
 							]
 						}
@@ -429,10 +732,11 @@ Group {
 						#1.5
 						Transform {
 							scale 4 4 1
-							translation -2.69 -4.25 5
+							rotation 0 1 0 3.1415926535820001 
+							translation 0.63 -4.25 5
 							children [
 								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
+									url ["bloc_mare/usi/afer_door.wrl"]
 								}
 							]
 						}
@@ -467,16 +771,6 @@ Group {
 							]
 						}
 						#6 section
-						#1.6
-						Transform {
-							scale 4 4 1
-							translation 0.65 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.6
 						Transform {
 							scale 4 4 1
@@ -508,16 +802,6 @@ Group {
 							]
 						}
 						#7 section
-						#1.7
-						Transform {
-							scale 4 4 1
-							translation 3.99 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.7
 						Transform {
 							scale 4 4 1
@@ -549,16 +833,6 @@ Group {
 							]
 						}
 						#8 section
-						#1.8
-						Transform {
-							scale 4 4 1
-							translation 7.33 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.8
 						Transform {
 							scale 4 4 1
@@ -590,16 +864,6 @@ Group {
 							]
 						}
 						#9 section
-						#1.9
-						Transform {
-							scale 4 4 1
-							translation 10.67 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.9
 						Transform {
 							scale 4 4 1
@@ -631,16 +895,6 @@ Group {
 							]
 						}
 						#10 section
-						#1.10
-						Transform {
-							scale 4 4 1
-							translation 14.01 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.10
 						Transform {
 							scale 4 4 1
@@ -672,16 +926,6 @@ Group {
 							]
 						}
 						#11 section
-						#1.11
-						Transform {
-							scale 4 4 1
-							translation 17.35 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.11
 						Transform {
 							scale 4 4 1
@@ -713,16 +957,6 @@ Group {
 							]
 						}
 						#12 section
-						#1.12
-						Transform {
-							scale 4 4 1
-							translation 20.69 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.12
 						Transform {
 							scale 4 4 1
@@ -754,16 +988,6 @@ Group {
 							]
 						}
 						#13 section
-						#1.13
-						Transform {
-							scale 4 4 1
-							translation 24.03 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.13
 						Transform {
 							scale 4 4 1
@@ -795,16 +1019,6 @@ Group {
 							]
 						}
 						#14 section
-						#1.14
-						Transform {
-							scale 4 4 1
-							translation 27.37 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.14
 						Transform {
 							scale 4 4 1
@@ -836,16 +1050,6 @@ Group {
 							]
 						}
 						#15 section
-						#1.15
-						Transform {
-							scale 4 4 1
-							translation 30.71 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.15
 						Transform {
 							scale 4 4 1
@@ -877,16 +1081,6 @@ Group {
 							]
 						}
 						#16 section
-						#1.16
-						Transform {
-							scale 4 4 1
-							translation 34.05 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.16
 						Transform {
 							scale 4 4 1
@@ -918,16 +1112,6 @@ Group {
 							]
 						}
 						#17 section
-						#1.17
-						Transform {
-							scale 4 4 1
-							translation 37.39 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.17
 						Transform {
 							scale 4 4 1
@@ -959,16 +1143,6 @@ Group {
 							]
 						}
 						#18 section
-						#1.18
-						Transform {
-							scale 4 4 1
-							translation 40.73 -4.25 5
-							children [
-								Inline {
-									url ["bloc_mare/ferestre/combination.wrl"]
-								}
-							]
-						}
 						#2.18
 						Transform {
 							scale 4 4 1
@@ -1812,10 +1986,11 @@ Group {
 
 				#entrance
 				Transform {
-					translation -7.5 -7.12 7.5
+					scale 0.94 1 1
+					translation -2.7 -7.12 7.5
 					children [
 						Inline {
-							url []
+							url ["entrance.wrl"]
 						}
 					]
 				}
@@ -1916,11 +2091,22 @@ Group {
 
 				#amphitheatre
 				Transform {
+					scale 1 1 1.3
 					rotation 0 0 1 0
-					translation 0 0 0
+					translation 17.88 0 -1.5
 					children [
 						Inline {
-							url []
+							url ["main_block.wrl"]
+						}
+					]
+				}
+				#the cab on the left
+				Transform {
+					scale 1.3 1 1
+					translation -17.4 -5.95 6
+					children [
+						Inline {
+							url ["cab.wrl"]
 						}
 					]
 				}

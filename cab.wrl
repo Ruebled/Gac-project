@@ -1,0 +1,102 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture ImageTexture {
+					url ["wall_yellow.png"]
+				}
+				textureTransform TextureTransform {
+					scale 15 15
+				}
+			}
+			geometry Box {
+				size 2 2.5 2
+			}
+		}
+	]
+}
+Transform {
+	rotation 0 1 0 1.5708
+	translation 0 0.2 0
+	children [
+		Shape {
+			appearance Appearance {
+				texture ImageTexture {
+					url ["silver_texture.jpg"]
+				}
+				textureTransform TextureTransform {
+					scale 15 15
+				}
+
+			}
+			geometry Extrusion {
+				beginCap TRUE
+				endCap TRUE
+				ccw FALSE
+				convex TRUE
+				crossSection [0.75 0.75, -1.2 0.75, -1.2 -0.75, 0.75 -0.75, 0.75 0.75]
+				spine [0 1 0, 0 2 0]
+				scale [1.5 1.5, 0.7 0]
+			}
+		}
+	]
+}
+Transform {
+	scale 0.9 1 1
+	translation 0 -0.35 1.6
+	children [
+		Inline {
+			url ["bloc_mic/usi/single_door.wrl"]
+		}
+	]
+}
+Transform {
+	rotation 0 1 0 1.5708
+	translation 1 0.3 0.3
+	scale 0.85 0.3 1
+	children [
+		Inline{
+			url ["bloc_mic/usi/wsquare_wind.wrl"]
+		}
+	]
+}
+Transform {
+	translation -0.9 0.3 1
+	scale 0.7 0.35 1
+	children [
+		Inline{
+			url ["bloc_mic/usi/wsquare_wind.wrl"]
+		}
+	]
+}
+Transform {
+	rotation 0 1 0 1.5708
+	translation -1 0.3 0.42
+	scale 1.25 0.5 1
+	children [
+		Inline{
+			url ["bloc_mic/usi/wsquare_wind.wrl"]
+		}
+	]
+}
+Transform {
+	translation 0.33 0 1.3
+	children [
+		Shape {
+			appearance Appearance {
+				texture ImageTexture {
+					url ["wall_yellow.png"]
+				}
+				textureTransform TextureTransform {
+					scale 15 15
+				}
+			}
+			geometry Box {
+				size 1.35 2.5 0.6
+			}
+		}
+	]
+}
+

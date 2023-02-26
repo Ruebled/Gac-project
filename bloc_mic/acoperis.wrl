@@ -15,7 +15,7 @@ Group {
 						    repeatS TRUE
 						}
 						textureTransform TextureTransform {
-							scale 30 1
+							scale 100 1
 						}
 					}
 					geometry Extrusion {
@@ -24,7 +24,7 @@ Group {
 						ccw TRUE
 						convex FALSE
 						creaseAngle 0
-						crossSection [-10.3 5.2, -10.3 -5.3, 8.2 -5.3, 9.3 -4.2, 9.3 -0.7, 10.3 -0.7, 10.5 5.3, -10.3 5.4]
+						crossSection [-10.1 5.4, -10.1 -5.3, 8 -5.3, 9.1 -4.2, 9.1 -0.7, 9.6 -0.7, 9.6 5.3, -10.1 5.4]
 						orientation 0 0 1 0
 						solid FALSE
 						spine[0 0 0, 0 0.9 0.05]
@@ -44,7 +44,7 @@ Group {
 							repeatT TRUE
 						}
 						textureTransform TextureTransform {
-							scale 5 4
+							scale 10 9
 						}
 					}
 					geometry Extrusion {
@@ -53,7 +53,7 @@ Group {
 						ccw TRUE
 						convex TRUE
 						creaseAngle 0
-						crossSection [-10.7 5, -10.7 -5.7, 8.6 -5.7, 9.7 -4.6, 9.7 -1.2, 10.7 -1.2, 10.7 5.2 -10.7 5]
+						crossSection [-10.2 5, -10.2 -5.7, 8.1 -5.7, 9.2 -4.6, 9.2 -1.2, 9.7 -1.2, 9.7 5.2 -10.2 5]
 						orientation 0 0 1 0
 						solid FALSE
 						spine[0 0 0, 0 0.1 0.0055]
